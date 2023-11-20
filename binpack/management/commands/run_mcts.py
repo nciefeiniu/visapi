@@ -4,7 +4,7 @@ import json
 from binpack.MCTS import CustomMCTS
 import random
 from binpack.models import Result
-from data_generator import DataGenerator
+from engine.data_generator import DataGenerator
 from asciitree import LeftAligned
 from collections import OrderedDict as OD
 from cProfile import Profile

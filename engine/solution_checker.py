@@ -1,16 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import math
-import bisect
-from sklearn.decomposition import PCA
-from data_generator import DataGenerator
-# from numba import jit
-from state import State
-import uuid
-import search
+
+from engine import search
 
 from sortedcontainers import SortedKeyList
-from collections import OrderedDict
 
 
 ALL_TILES_USED = 'ALL_TILES_USED'

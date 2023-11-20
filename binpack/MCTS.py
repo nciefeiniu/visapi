@@ -7,9 +7,9 @@ EPS = 0.1
 
 from collections import OrderedDict
 
-from data_generator import DataGenerator
-from state import State
-from solution_checker import SolutionChecker, ALL_TILES_USED, TILE_CANNOT_BE_PLACED, NO_NEXT_POSITION_TILES_UNUSED, get_cols, get_rows
+from engine.data_generator import DataGenerator
+from engine.state import State
+from engine.solution_checker import SolutionChecker, ALL_TILES_USED, TILE_CANNOT_BE_PLACED, NO_NEXT_POSITION_TILES_UNUSED, get_cols, get_rows
 
 ORIENTATIONS = 2
 
