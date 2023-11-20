@@ -92,35 +92,35 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'binpack',
-        'HOST': '',  # in secrets.json
-        'USER': '',  # in secrets.json
-        'PASSWORD': '',  # in secrets.json
-        'PORT': '',                      # Set to empty string for default.
+        'HOST': '127.0.0.1',  # in secrets.json
+        'USER': 'postgres',  # in secrets.json
+        'PASSWORD': '123456',  # in secrets.json
+        'PORT': 5432,                      # Set to empty string for default.
         'CONN_MAX_AGE': 3600,
     }
 }
 
-secrets_file = os.getenv("SECRETS_FILE", "secrets.json")
-with open(os.path.join(BASE_DIR, "visapi", secrets_file)) as f:
-    secrets = json.loads(f.read())
+# secrets_file = os.getenv("SECRETS_FILE", "secrets.json")
+# with open(os.path.join(BASE_DIR, "visapi", secrets_file)) as f:
+#     secrets = json.loads(f.read())
+#
+# def get_secret(setting, secrets=secrets):
+#     try:
+#         return secrets[setting]
+#     except KeyError:
+#         err = "Set the %s in mnlth/settings/secrets.json file." % setting
+#         raise ImproperlyConfigured(err)
+#
+# DB_HOST, DB_NAME, DB_USER, DB_PASSWORD, DB_PORT = get_secret("DATABASE")
+#
+# for db in DATABASES.values():
+#     db["HOST"] = DB_HOST
+#     db["NAME"] = DB_NAME
+#     db["USER"] = DB_USER
+#     db["PASSWORD"] = DB_PASSWORD
+#     db["PORT"] = DB_PORT
 
-def get_secret(setting, secrets=secrets):
-    try:
-        return secrets[setting]
-    except KeyError:
-        err = "Set the %s in mnlth/settings/secrets.json file." % setting
-        raise ImproperlyConfigured(err)
-
-DB_HOST, DB_NAME, DB_USER, DB_PASSWORD, DB_PORT = get_secret("DATABASE")
-
-for db in DATABASES.values():
-    db["HOST"] = DB_HOST
-    db["NAME"] = DB_NAME
-    db["USER"] = DB_USER
-    db["PASSWORD"] = DB_PASSWORD
-    db["PORT"] = DB_PORT
-
-SECRET_KEY = get_secret("SECRET_KEY")
+# SECRET_KEY = get_secret("SECRET_KEY")
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
